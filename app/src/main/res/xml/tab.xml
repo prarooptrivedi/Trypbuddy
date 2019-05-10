@@ -1,0 +1,38 @@
+<tabs>
+    <tab
+        id="@+id/nearby"
+        icon="@drawable/ic_nearby"
+        title="HOME"
+        activeColor="@color/tab_select_txt"
+        inActiveColor="@color/tab_unselect_txt"
+
+        />
+    <tab
+        id="@+id/discover"
+        icon="@drawable/ic_nearby"
+        title="STAY VIEW"
+        activeColor="@color/tab_select_txt"
+        inActiveColor="@color/tab_unselect_txt"
+        />
+    <tab
+        id="@+id/schedule"
+        icon="@drawable/ic_nearby"
+        title="QUICK VIEW"
+        activeColor="@color/tab_select_txt"
+        inActiveColor="@color/tab_unselect_txt"
+        />
+    <tab
+        id="@+id/favorite"
+        icon="@drawable/ic_nearby"
+        title="NOTIFICATION"
+        activeColor="@color/tab_select_txt"
+        inActiveColor="@color/tab_unselect_txt"
+        />
+    <tab
+        id="@+id/more"
+        icon="@drawable/ic_nearby"
+        title="MENU"
+        activeColor="@color/tab_select_txt"
+        inActiveColor="@color/tab_unselect_txt"
+        />
+</tabs>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <resources>
+        <color name="colorPrimary">#A81957</color>
+        <color name="colorPrimaryDark">#0f141c</color>
+        <color name="colorAccent">#eb4335</color>
+        <color name="titlebackgroundcolor">#0000AA</color>
+        <color name="tab_select_txt">#A81957</color>
+        <color name="tab_unselect_txt">#000</color>
+        <color name="text_blue">#0B215B</color>
+        <color name="colorWhite">#ffffff</color>
+        <color name="greyText">#9b9b9b</color>
+        <color name="greenText">#4cb139</color>
+        <color name="viewLineColor">#ebebeb</color>
+        <color name="emailColor">#6cb7ae</color>
+        <color name="blackText">#4c4a4a</color>
+        <color name="medicalDetailRectColor">#d8d8d8</color>
+    <color name="red">#eb4335</color>
+        <color name="blueText">#20c0ff</color>
+        <color name="line">#e0e0e0</color>
+        <color name="transparent">#00000000</color>
+        <color name="travelcolor">#1A2332</color>
+
+        <color name="white">#ffffff</color>
+        <color name="black">#000000</color>
+        <color name="login_blue_txt">#20c0ff</color>
+        <color name="login_gray_txt">#acacac</color>
+        <color name="create_color">#595959</color>
+        <color name="view_line_color">#e9e9e9</color>
+        <color name="transperent">#00000000</color>
+        <color name="background_gray">#fafafa</color>
+        <color name="text_black">#4c4a4a</color>
+        <color name="text_gray">#a0a0a0</color>
+        <color name="desc_gray">#949494</color>
+        <color name="green_triangle">#86e681</color>
+        <color name="seen_green">#32d326</color>
+        <color name="view_gray">#d5d5d5</color>
+
+        <color name="listgreen">#72dd33</color>
+        <color name="darkorange">#ff9974</color>
+        <color name="darktomato">#ff7878</color>
+        <color name="skyblue">#20c0ff</color>
+        <color name="textgray">#4c4a4a</color>
+        <color name="textgray_dark">#6e6e6e</color>
+        <color name="textgray_light">#8c8c8c</color>
+        <color name="pink">#ff82cc</color>
+        <color name="purpal">#c7abff</color>
+        <color name="chooseFileRect">#e9e9e9</color>
+        <color name="button_yellow">#ffbd29</color>
+        <color name="gray_background">#fafafa</color>
+
+    <color name="bg">#f6f6f6</color>
+
+    <color name="hint_gray">#9f9e9e</color>
+
+    <color name="circle_red">#c40b21</color>
+    <color name="edit_green">#34ac9e</color>
+    <color name="resend_gray">#818181</color>
+    <color name="make_gray">#878686</color>
+    <color name="luxury_red">#c40b21</color>
+    <color name="price_green">#1e9d19</color>
+    <color name="verify_gray">#40474b</color>
+    <color name="_24_red">#ED7D8B</color>
+    <color name="title_txt">#8f948d</color>
+    <color name="blue">#0c61de</color>
+    <color name="view_line">#e1e1e1</color>
+    <color name="grey">#dcdcdc</color>
+    <color name="circle_blue">#3492ff</color>
+    <color name="sub_txt">#585d57</color>
+    <color name="inactive">#ececec</color>
+    <color name="active">#ffc317</color>
+    <color name="dark_gray">#383c3f</color>
+    <color name="sub_txt_gray">#898a8c</color>
+    <color name="green">#26b63a</color>
+    <color name="light_red">#fededd</color>
+    <color name="tab_txt_color">#8e8e8f</color>
+</resources>

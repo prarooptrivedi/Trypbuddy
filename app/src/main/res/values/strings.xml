@@ -1,0 +1,187 @@
+<resources>
+    <string name="app_name">Trypbuddy.com</string>
+    <string name="large_text">
+         <string name="get">Get 50% Cashback on this booking on trupbuddy, T&amp;C apply</string>
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="terms">*T&amp;C</string>
+    <string name="hotel">Cancellation &amp; Hotel Policy</string>
+    <string name="facebook_app_id">221021288851340</string>
+    <string name="fb_login_protocol_scheme">fb221021288851340</string>
+
+    <string name="welcome">Bienvenido</string>
+    <string name="cancel_login">Se canceló la operación</string>
+    <string name="error_login">Ocurrió un error al ingresar</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="edit_phone">Edit Phone number</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="we_are">We are verifying your mobile number</string>
+    <string name="square">SQUARE</string>
+    <string name="rooms">Rooms</string>
+    <string name="make_your_trip">Make your trip simple and pocket friendly</string>
+    <string name="login_fb">Login with Facebook</string>
+    <string name="login_gmail">Login with Gmail</string>
+    <string name="deal_day">Deal of the day</string>
+    <string name="view_images">View Images</string>
+    <string name="gangtok">Gangtok, Sikkim at 50% off</string>
+    <string name="explore">Explore the nature  with Cube Trip</string>
+    <string name="search_city">Search City</string>
+    <string name="popular_city">Popular City</string>
+    <string name="honeymoon_places">Honeymoon places</string>
+    <string name="we_are_in">We are in 257 Cities</string>
+    <string name="across_india">ACROSS INDIA</string>
+    <string name="wsdesign">Powered by WSDesign</string>
+    <string name="deals_for_you">Deals For you</string>
+    <string name="by_the_sea">By the Sea</string>
+    <string name="_19">19 Properties</string>
+    <string name="a_drink_in_hand">A drink in hand, splendid sea views and cool breeze….
+Welcome to Paradise </string>
+    <string name="view_all_19">View All 19 Properties</string>
+    <string name="luxury_hotels">LUXURY HOTELS</string>
+    <string name="view_all_76">View All 76 Hotels</string>
+    <string name="gangtok_sikkim">Gangtok, Sikkim, INDIA</string>
+    <string name="may_09">May 09 - May 10  |  1 day  |  2 Guests</string>
+    <string name="top">Top</string>
+    <string name="picks">Picks</string>
+    <string name="hotels_where">Hotels where guest like you always feel Special</string>
+    <string name="indore">Indore</string>
+    <string name="_12">₹12,999</string>
+    <string name="other">Other</string>
+    <string name="recomm">Recommendations</string>
+    <string name="where_you">Where you feel the best expeirence in stays</string>
+    <string name="hotel_sikkim">Hotel Sikkim vine</string>
+    <string name="near_cafe">Near Cafe yard, OP road</string>
+    <string name="_877">877 Votes</string>
+    <string name="_4.7">4.7</string>
+    <string name="location">LOCATION</string>
+    <string name="reviews">REVIEWS</string>
+    <string name="photos">PHOTOS</string>
+    <string name="sr_assured">SR ASSURED</string>
+    <string name="_167">167</string>
+    <string name="verified">Verified</string>
+    <string name="_243">243</string>
+    <string name="trusted">Trusted</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="_12pm">12:00 Pm</string>
+    <string name="_1">1 NIGHT</string>
+    <string name="_11">11:00 Am</string>
+    <string name="_1classic">1 Classic (2X) Room, 1 Adult  ></string>
+    <string name="sunrise">Sunrise checkin not available for scheduled dates</string>
+    <string name="amount_to_pay">Amount to pay</string>
+    <string name="dropped">Dropped Price</string>
+    <string name="_24">(24%)</string>
+    <string name="coupon">Coupon</string>
+    <string name="winter">WINTER45</string>
+    <string name="applied">applied</string>
+    <string name="_1899">₹1899</string>
+    <string name="_899">₹899</string>
+    <string name="_452">₹452</string>
+    <string name="_635">₹635</string>
+    <string name="total_savings">Total Savings ₹1487</string>
+
+    <string name="checking">- Checking time will be 11:00 Am only</string>
+    <string name="no_alcohols">- No alcohols will be provided or allowed from outside</string>
+    <string name="guest_should">- Guest should hold passport / adharcard / driving licence</string>
+    <string name="book_with">Book with SQUARE ROOMS</string>
+    <string name="get_50">Get 50% Cashback on this booking, upto 150Rs, T&amp;C apply</string>
+    <string name="book_now">Book Now</string>
+    <string name="_70">70% off</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="loading_rooms">Loding Rooms for Sikkim</string>
+    <string name="_1adult">1 Adult</string>
+    <string name="_1room">1 Room</string>
+    <string name="_1night">1 Night</string>
+    <string name="_1299">₹1299</string>
+    <string name="services">Service  78%</string>
+    <string name="over_all">Over all  84%</string>
+    <string name="rooms_84">Rooms  84%</string>
+    <string name="title_activity_request_enquiry">RequestEnquiry</string>
+    <string name="title_activity_checkavailability">CheckavailabilityActivity</string>
+</resources>

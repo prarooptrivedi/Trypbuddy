@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rv_first"
+        android:layout_width="fill_parent"
+        android:background="@color/travelcolor"
+        android:layout_height="50dip">
+        <com.example.praroop.trypbuddycom.Customfont.MyTextView_Roboto_Regular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification"
+            android:textColor="@color/white"
+            android:textSize="18dip"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dip"
+            android:layout_marginLeft="15dip"/>
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/iv_nonotification"
+        android:layout_width="120dip"
+      android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_height="120dip"
+        android:src="@drawable/notificatios"/>
+    <com.example.praroop.trypbuddycom.Customfont.MyTextView_Roboto_Regular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dip"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/iv_nonotification"
+        android:text="You dont't have any notification"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14dip"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dip"
+        android:layout_marginLeft="15dip"/>
+</RelativeLayout>

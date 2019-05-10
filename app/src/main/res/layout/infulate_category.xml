@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_marginRight="10dip"
+    android:layout_marginLeft="10dip"
+    android:orientation="vertical"
+  android:layout_margin="10dip"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_gravity="center"
+        android:src="@drawable/demo" />
+    <com.example.praroop.trypbuddycom.Customfont.MyTextView_Roboto_Regular
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="3dip"
+        android:id="@+id/tvTitle"
+        android:gravity="center"
+        android:textColor="@color/login_gray_txt"
+        android:textSize="13dip"
+        android:text="Praroop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+</LinearLayout>

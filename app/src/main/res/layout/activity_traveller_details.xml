@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/tv_toolbaar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/toolbar_header"/>
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:background="@color/view_gray"
+        android:layout_height="1dip"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_marginBottom="20dip"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <com.example.praroop.trypbuddycom.Customfont.TextViewSFProDisplaySemibold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20dip"
+                android:layout_marginTop="10dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="10dip"
+                android:text="Hampta Pass Treking 2019"/>
+
+            <com.example.praroop.trypbuddycom.Customfont.TextViewSFProDisplayRegular
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:layout_marginTop="3dip"
+                android:textSize="14dip"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="5 days 4 night"/>
+            <com.example.praroop.trypbuddycom.Customfont.TextViewSFProDisplayRegular
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:textSize="16dip"
+                android:layout_marginTop="5dip"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Date of travel : 20 March 2019"/>
+            <com.example.praroop.trypbuddycom.Customfont.TextViewSFProDisplayRegular
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:textSize="16dip"
+                android:layout_marginTop="5dip"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Inventories : 2 Adult"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dip"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_gravity="center"
+                android:gravity="center|left"
+                android:background="@color/view_line_color">
+                <TextView
+                    android:layout_marginLeft="10dip"
+                    android:layout_width="wrap_content"
+                    android:text="Contact Information"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="* Your First Name" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="* Your Last Name" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="* Your Phone"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="Email" />
+            </android.support.design.widget.TextInputLayout>
+
+           <LinearLayout
+               android:layout_width="fill_parent"
+               android:layout_margin="15dip"
+               android:orientation="vertical"
+               android:layout_height="120dip"
+               android:background="@color/chooseFileRect">
+               <com.example.praroop.trypbuddycom.Customfont.TextViewSFProDisplaySemibold
+                   android:layout_width="fill_parent"
+                   android:gravity="center"
+                   android:layout_height="wrap_content"
+                   android:textColor="@color/luxury_red"
+                   android:textSize="16dip"
+                   android:layout_marginTop="10dip"
+                   android:text="Have a discount code ? Redeem it here"/>
+               <LinearLayout
+                   android:layout_marginTop="5dip"
+                   android:layout_width="fill_parent"
+                   android:layout_height="wrap_content">
+                   <android.support.design.widget.TextInputLayout
+                       android:layout_width="0dip"
+                       android:layout_marginLeft="10dip"
+                       android:layout_weight="1.5"
+                       android:layout_height="wrap_content">
+                       <EditText
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:imeOptions="actionSend"
+                           android:inputType="text"
+                           android:maxLines="1"
+                           android:hint="* Your Last Name" />
+                   </android.support.design.widget.TextInputLayout>
+
+
+                   <com.example.praroop.trypbuddycom.Customfont.TextViewSFProDisplaySemibold
+                       android:layout_width="0dip"
+                       android:layout_margin="15dip"
+                       android:background="@drawable/rectangle_red_button"
+                       android:layout_weight="0.5"
+                       android:layout_height="30dip"
+                       android:text="APPLY NOW"
+                       android:gravity="center"
+
+                               android:textSize="13.3sp"
+                       android:textStyle="normal"
+                       android:textColor="@color/white"/>
+               </LinearLayout>
+           </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="5dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_height="50dip"
+                    />
+                <TextView
+                    android:textColor="@color/circle_red"
+                    android:layout_width="wrap_content"
+                    android:text=" * Terms And Condition"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:layout_marginTop="5dip"
+                android:background="@color/view_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"/>
+            <LinearLayout
+                android:layout_margin="15dip"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:textColor="@color/black"
+                    android:textSize="20dip"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="Total Payable Amount"/>
+                <TextView
+                    android:layout_marginTop="10dip"
+                    android:layout_width="fill_parent"
+                    android:textColor="@color/black"
+                    android:textSize="25dip"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="₹ 1000"/>
+            </LinearLayout>
+            <com.example.praroop.trypbuddycom.Customfont.TextViewSFProDisplaySemibold
+                android:layout_width="fill_parent"
+                android:layout_marginTop="10dip"
+                android:layout_margin="15dip"
+                android:background="@drawable/rectangle_red_button"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Booking Confirm"
+                android:layout_marginRight="1dip"
+                android:gravity="center"
+                android:id="@+id/bttn_callback"
+                android:textSize="16dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textStyle="normal"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/storyimage"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_launcher_background"
+            app:civ_border_color="#31707070"
+            app:civ_border_width="0.7dp" />
+
+
+        <!--The visibility of the below image views is given "gone" because
+    it is only to be shown on some positions, that's why the condition is
+    provided in adapter class-->
+        <ImageView
+            android:id="@+id/redcircleimg"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:src="@drawable/nearby_red_circle"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/locationimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/location_white"
+            android:visibility="gone" />
+
+        <com.example.praroop.trypbuddycom.Customfont.TextViewSFProDisplayMedium
+            android:id="@+id/offertxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:gravity="bottom"
+            android:background="@drawable/off_red_round"
+            android:paddingBottom="2.7dp"
+            android:paddingEnd="10.7dp"
+            android:paddingStart="10.7dp"
+            android:paddingTop="2.7dp"
+            android:text="@string/_70"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    <com.example.praroop.trypbuddycom.Customfont.TextViewSFProDisplaySemibold
+        android:id="@+id/nametext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="jghvjhv"
+        android:textColor="@color/text_black"
+        android:textSize="11.3sp" />
+
+</LinearLayout>

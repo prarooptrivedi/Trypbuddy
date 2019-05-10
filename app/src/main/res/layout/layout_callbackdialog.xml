@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dip"
+    android:layout_height="280dip">
+    <LinearLayout
+        android:id="@+id/rv_first"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip">
+        <com.example.praroop.trypbuddycom.Customfont.MyTextView_Roboto_Regular
+            android:layout_width="fill_parent"
+            android:gravity="center|left"
+            android:layout_marginLeft="10dip"
+            android:textColor="@color/black"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dip"
+            android:text="Send a message"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/visible"
+        android:background="#dedede"
+        android:layout_below="@+id/rv_first"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"/>
+    <EditText
+        android:layout_marginTop="4dip"
+        android:background="@drawable/edittext"
+        android:textColorHint="@color/textgray_light"
+        android:id="@+id/edit_mobile"
+        android:hint="Enter Mobile"
+        android:paddingLeft="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_below="@+id/visible"/>
+    <EditText
+        android:id="@+id/edit_message"
+        android:background="@drawable/edittext"
+        android:textColorHint="@color/textgray_light"
+        android:paddingTop="5dip"
+        android:paddingLeft="5dip"
+    android:layout_above="@+id/ll_hostcontact"
+        android:layout_below="@+id/edit_mobile"
+        android:gravity="top"
+        android:hint="Enter Message"
+        android:layout_marginTop="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+   <!-- <View
+        android:id="@+id/visible1"
+        android:background="#dedede"
+        android:layout_below="@+id/edit_message"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"/>-->
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/ll_hostcontact"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:layout_height="50dip">
+        <com.example.praroop.trypbuddycom.Customfont.MyTextView_Roboto_Regular
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dip"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:text="Message the host"
+            android:background="@drawable/red1_rect"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</RelativeLayout>

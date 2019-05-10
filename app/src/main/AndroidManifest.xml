@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.praroop.trypbuddycom">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo1"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Views.Details_Activity"></activity>
+        <activity android:name=".Views.Splash_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Views.Activity_Main"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".Views.Activity_Register" />
+        <activity android:name=".Views.RequestEnquiry" />
+        <activity android:name=".Views.Activity_RequestCallback" />
+        <activity android:name=".Views.Activity_AboutUs" />
+        <activity android:name=".Views.Activity_Faq" />
+        <activity android:name=".Views.Activity_Termsandcondition" />
+        <activity android:name=".Views.Activity_PrivacyPolicy" />
+        <activity android:name=".Views.Activity_TripDetails" />
+        <activity android:name=".Views.MainActivity" />
+        <activity android:name=".Views.Activity_Select_Person" />
+        <activity android:name=".Views.Activity_ReviewBooking" />
+        <activity android:name=".Views.HotelProfile" />
+        <activity android:name=".Views.Activity_PaymentFeatures" />
+        <activity
+            android:name=".Views.TravellerDetailsActivity"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden" />
+        <activity
+            android:name=".Views.CheckavailabilityActivity"
+            android:windowSoftInputMode="adjustNothing|stateAlwaysHidden" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="24dp"
+        android:layout_height="15dp"
+        android:src="@drawable/ic_back"/>
+
+    <com.example.praroop.trypbuddycom.Customfont.MyTextView_Roboto_Medium
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginLeft="40dp"
+        android:textSize="20dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_back"/>
+
+        <com.example.praroop.trypbuddycom.Customfont.MyTextView_Roboto_Regular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#383c3f"
+            android:textSize="11.7sp"
+            android:text="Map"/>
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>
