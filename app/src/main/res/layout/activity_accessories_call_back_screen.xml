@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Views.TripCallBackScreen">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/top_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp">
+
+        <include layout="@layout/toolbar_trypbuddy" />
+    </androidx.cardview.widget.CardView>
+    <ScrollView
+        android:layout_below="@+id/top_cardview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/text_tripname"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="20dip"
+               android:layout_marginTop="5dip"
+                android:layout_marginLeft="10dip"
+                android:text="Hampta Pass Treking 2019"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/text_tripdays"
+                android:layout_marginTop="5dip"
+                android:layout_marginLeft="10dip"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="16dip"
+                android:layout_height="wrap_content"
+                android:text="5 days 4 nigh"/>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_marginTop="10dip"
+                android:background="@color/colorPrimary"
+                android:layout_height="0.5dip"></View>
+            <LinearLayout
+                android:layout_marginTop="15dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edit_fromdate"
+                    android:paddingLeft="10dip"
+                    android:layout_width="0dip"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1.7"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="Choose from date" />
+
+
+                <Button
+                    android:id="@+id/btn_frombutton"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.3"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dip"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_gravity="center"
+                android:gravity="center|left"
+                android:background="#f4f4f4">
+                <TextView
+                    android:layout_marginLeft="10dip"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="Contact Details"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="5dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_marginTop="5dip"
+                android:textSize="15dip"
+                android:layout_width="wrap_content"
+                android:text="Enter Name"
+                android:fontFamily="@font/opensans_regular"
+                android:paddingLeft="10dip"
+                android:textColor="#676d77"
+                android:layout_height="wrap_content"/>
+            <EditText
+                android:hint="Name"
+                android:textSize="15dip"
+                android:paddingLeft="10dip"
+                android:fontFamily="@font/opensans_regular"
+                android:background="@android:color/transparent"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"/>
+            <View
+                android:layout_marginTop="1dip"
+                android:background="#676d77"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"/>
+                <TextView
+                    android:layout_marginTop="5dip"
+                    android:textSize="15dip"
+                    android:layout_width="wrap_content"
+                    android:text="Enter Mobile"
+                    android:fontFamily="@font/opensans_regular"
+                    android:paddingLeft="10dip"
+                    android:textColor="#676d77"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:hint="Mobile"
+                    android:paddingLeft="10dip"
+                    android:textSize="15dip"
+                    android:fontFamily="@font/opensans_regular"
+                    android:background="@android:color/transparent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dip"/>
+                <View
+                    android:layout_marginTop="1dip"
+                    android:background="#676d77"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"/>
+                <TextView
+                    android:layout_marginTop="5dip"
+                    android:textSize="15dip"
+                    android:layout_width="wrap_content"
+                    android:text="Enter Email"
+                    android:fontFamily="@font/opensans_regular"
+                    android:paddingLeft="10dip"
+                    android:textColor="#676d77"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:hint="Email"
+                    android:textSize="15dip"
+                    android:paddingLeft="10dip"
+                    android:fontFamily="@font/opensans_regular"
+                    android:background="@android:color/transparent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dip"/>
+                <View
+                    android:layout_marginTop="1dip"
+                    android:background="#676d77"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"/>
+                <TextView
+                    android:layout_marginTop="5dip"
+                    android:textSize="15dip"
+                    android:layout_width="wrap_content"
+                    android:text="Enter Message"
+                    android:fontFamily="@font/opensans_regular"
+                    android:paddingLeft="10dip"
+                    android:textColor="#676d77"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:gravity="center|left"
+                    android:layout_gravity="center|left"
+                    android:textSize="15dip"
+                    android:hint="Message"
+                    android:paddingLeft="10dip"
+                    android:fontFamily="@font/opensans_regular"
+                    android:background="@android:color/transparent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dip"/>
+                <View
+                    android:layout_marginTop="1dip"
+                    android:background="#676d77"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_alignParentBottom="true"
+
+        android:text="Submit"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"/>
+</RelativeLayout>

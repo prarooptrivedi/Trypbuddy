@@ -1,119 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#dedede"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="300dip"
-        android:fitsSystemWindows="true"
-        android:background="@color/colorAccent"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="@color/colorAccent"
-            app:statusBarScrim="@color/colorAccent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:paddingTop="220dp"
-                android:background="@drawable/header"
-                android:paddingBottom="70dp"
-                android:layout_gravity="center|top"
-                android:gravity="center">
-            </LinearLayout>
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="fill_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay"/>
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
-
-        <include layout="@layout/content_main"/>
-
-
-    <LinearLayout
-        android:elevation="10dp"
-        android:layout_marginTop="190dp"
-        app:layout_behavior="@string/simple_view_behavior"
-        app:behavior_dependsOn="@+id/app_bar"
-        app:behavior_dependType="y"
-        app:behavior_dependTarget="-176dp"
-        app:behavior_targetX="16dp"
-        android:layout_marginLeft="25dip"
-        android:layout_marginRight="25dip"
-        app:behavior_targetY="8dp"
-        android:layout_gravity="center|top"
-        android:background="@drawable/rounded"
-        android:layout_width="fill_parent"
-        app:behavior_targetWidth="320dp"
-        app:behavior_targetHeight="45dp"
-        android:layout_height="wrap_content">
-        <com.example.praroop.trypbuddycom.Customfont.EditText_Roboto_Regular
-            android:hint="Search Category, Trip"
-            android:background="@color/transparent"
-            android:layout_width="fill_parent"
-            android:layout_marginRight="15dip"
-            android:paddingLeft="10dip"
-            android:cursorVisible="false"
-            android:layout_marginLeft="15dip"
-            android:textColor="@color/white"
-            android:layout_gravity="center"
-            android:textSize="15dip"
-            android:layout_height="45dip"/>
-    </LinearLayout>
-    <ImageView
-        android:visibility="gone"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/zoonooz"
-        android:layout_gravity="center|top"
-        android:layout_marginTop="50dp"
-        android:elevation="10dp"
-        app:layout_behavior="@string/simple_view_behavior"
-        app:behavior_dependsOn="@+id/app_bar"
-        app:behavior_dependType="y"
-        app:behavior_dependTarget="-176dp"
-        app:behavior_targetX="16dp"
-        app:behavior_targetY="8dp"
-        app:behavior_targetWidth="40dp"
-        app:behavior_targetHeight="40dp"/>
-
+    android:background="#FAFAFA"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
     <TextView
-        android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="?attr/actionBarSize"
-        android:text="Amornchai"
-        android:textSize="18dp"
-        android:elevation="10dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="-100dp"
-        android:gravity="center_vertical"
-        android:textColor="@android:color/white"
-        android:alpha="0"
-        app:layout_behavior="@string/simple_view_behavior"
-        app:behavior_dependsOn="@+id/app_bar"
-        app:behavior_dependType="y"
-        app:behavior_dependTarget="-206dp"
-        app:behavior_targetY="0dp"
-        app:behavior_targetAlpha="1"/>
+        android:textSize="20dip"
+        android:text="trypBuddy"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginBottom="10dip"
+        android:fontFamily="@font/opensans_bold"
+        android:layout_height="wrap_content"/>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-</android.support.design.widget.CoordinatorLayout>
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_banner"
+        android:layout_width="fill_parent"
+        android:layout_height="220dip">
+    </androidx.recyclerview.widget.RecyclerView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginTop="35dip"
+        android:background="@drawable/rect_gray_bg"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:hint="Search for a destination"
+        android:drawablePadding="10dip"
+        android:inputType="textPersonName"
+        android:textColor="@color/navyblue"
+        android:textColorHint="@color/gray"
+        android:textSize="14sp" />
+</RelativeLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="10dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20dip"
+        android:text="Top Destination"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginBottom="10dip"
+        android:fontFamily="@font/opensans_bold"
+        android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_trips"
+
+        android:layout_marginRight="15dip"
+        android:layout_marginLeft="15dip"
+
+        android:layout_marginTop="10dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+</LinearLayout>

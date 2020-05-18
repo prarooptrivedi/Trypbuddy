@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+ <!--     //  <domain includeSubdomains="true">http://uat.zepth.com/api/users/checkEmail</domain>-->
+       <!-- <domain includeSubdomains="true">demo.zepth.com</domain>//-->
+        <domain includeSubdomains="true">sampledocs.org</domain>
+
+        <!--<domain includeSubdomains="true">demo.zepth.com</domain>-->
+    </domain-config>
+</network-security-config>
