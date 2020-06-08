@@ -91,12 +91,22 @@ interface ServiceInterface {
 
 
     @Headers("Content-Type:application/json")
+    @POST("bookmark/create.php")
+    fun getBookMarhlistsubmit(@Body body: Any?) : Observable<WishListSubmitModel>
+
+
+    @Headers("Content-Type:application/json")
     @POST("blog/listblog.php")
     fun getBlog(@Body body: Any?) : Observable<BlogModel>
 
     @Headers("Content-Type:application/json")
     @POST("contactus/create.php")
     fun getContactus(@Body body: Any?) : Observable<WishListSubmitModel>
+
+
+    @Headers("Content-Type:application/json")
+    @POST("tripcallback/create.php")
+    fun sendTripCallBack(@Body body: Any?) : Observable<WishListSubmitModel>
 
 }
 

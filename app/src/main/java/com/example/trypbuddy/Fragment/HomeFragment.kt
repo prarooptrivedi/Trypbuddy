@@ -19,6 +19,7 @@ import com.example.trypbuddy.Fragment.BaseFragment
 import com.example.trypbuddy.Model.*
 import com.example.trypbuddy.Presenter.CategoryClick
 import com.example.trypbuddy.Presenter.ClickListnerBookMark
+import com.example.trypbuddy.Presenter.ClickListnerWishList
 import com.example.trypbuddy.Presenter.TripClickListner
 import com.example.trypbuddy.R
 import com.example.trypbuddy.Views.TripDetailScreen
@@ -29,11 +30,13 @@ import java.util.*
 /**
  * A simple [Fragment] subclass.
  */
-class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickListnerBookMark,CategoryClick {
+class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickListnerBookMark,CategoryClick,ClickListnerWishList {
+
 
 
     var tripClickListner:TripClickListner?=null
     var clickListnerBookMark:ClickListnerBookMark?=null
+    var clickListnerWishList:ClickListnerWishList?=null
     var categoryClick:CategoryClick?=null
     var rv_category:RecyclerView?=null
     var rv_banner:RecyclerView?=null
@@ -51,6 +54,7 @@ class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickL
         initViews(view)
         tripClickListner=this as TripClickListner
         clickListnerBookMark=this as ClickListnerBookMark
+        clickListnerWishList=this as ClickListnerWishList
         categoryClick=this as CategoryClick
         sendBannerRequest()
 
@@ -101,7 +105,7 @@ class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickL
                 val respone = arg
                 rv_trips!!.visibility = View.VISIBLE
                 rv_trips!!.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-                rv_trips!!.adapter = TripListAdapter(respone.data!!,activity,tripClickListner!!,clickListnerBookMark!!)
+                rv_trips!!.adapter = TripListAdapter(respone.data!!,activity,tripClickListner!!,clickListnerBookMark!!,clickListnerWishList!!)
 
 
             }
@@ -176,11 +180,11 @@ class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickL
         intent.putExtra("isGroup",isGroup)
         startActivity(intent)
     }
-    override fun bookMarkClick(tripId: String, merchantId: String, status: String) {
+    override fun bookMarkClick(tripId: String, merchantId: String, status: String,type:String) {
         if (Utility.hasInternet(activity!!) == true) {
             /*val stringHashMap = HashMap<String, String>()
             stringHashMap.put("token","FBB9F97DE77C7888DE36E5B74CFF9")*/
-            val data = RequestWishlistSubmitModel("FBB9F97DE77C7888DE36E5B74CFF9","1",tripId,merchantId,status)
+            val data = RequestWishlistSubmitModel("FBB9F97DE77C7888DE36E5B74CFF9","1",tripId,merchantId,status,type)
             serviceModel!!.doPostRequest(data, "wishlist/create.php", activity!!)
         } else {
             Utility.showToast(activity!!,"No Internet", Toast.LENGTH_SHORT)?.show()
@@ -189,7 +193,16 @@ class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickL
 
 
     }
-
+    override fun wishListClick(tripId: String, merchantId: String, status: String, type: String) {
+        if (Utility.hasInternet(activity!!) == true) {
+            /*val stringHashMap = HashMap<String, String>()
+            stringHashMap.put("token","FBB9F97DE77C7888DE36E5B74CFF9")*/
+            val data = RequestWishlistSubmitModel("FBB9F97DE77C7888DE36E5B74CFF9","1",tripId,merchantId,status,type)
+            serviceModel!!.doPostRequest(data, "bookmark/create.php", activity!!)
+        } else {
+            Utility.showToast(activity!!,"No Internet", Toast.LENGTH_SHORT)?.show()
+        }
+    }
     override fun categeoryClick(category_id: String) {
         if (Utility.hasInternet(activity!!) == true) {
             /*val stringHashMap = HashMap<String, String>()

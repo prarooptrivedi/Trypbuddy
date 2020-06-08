@@ -31,10 +31,10 @@ class AccessoriesListAdapter(val arrData: ArrayList<AccessoriesProductModel.Data
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = arrData!![position]
 
-        holder?.tv_tripprice!!.text = "₹ "+data.price_perday+" "+"Per Day"
-        holder?.tv_tripname!!.text = data.product_name
-        holder?.tv_tripcity.isVisible=false
-        holder?.ic_bookmark.isVisible=false
+        holder.tv_tripprice!!.text = "₹ "+data.price_perday+" "+"Per Day"
+        holder.tv_tripname!!.text = data.product_name
+        holder.tv_tripcity.isVisible=false
+        holder.ic_bookmark.isVisible=true
         //holder?.tv_tripcity!!.text = data.city_name
         if (! data.product_image1.equals("")) {
             Picasso.with(fragmentContext!!).load("http://sampledocs.org/trypbuddy/uploads/"+data.product_image1)
@@ -42,7 +42,7 @@ class AccessoriesListAdapter(val arrData: ArrayList<AccessoriesProductModel.Data
                 .error(R.drawable.demo)
                 .into(holder.iv_tripimage)
         }
-        holder?.ll_click.setOnClickListener(View.OnClickListener {
+        holder.ll_click.setOnClickListener(View.OnClickListener {
             tripClickListner.TripClick(data.id!!,data.product_name!!,data.product_description!!,data.price_perday!!)
         })
       /*  if (data.wishlist.equals("1")){
@@ -64,7 +64,7 @@ class AccessoriesListAdapter(val arrData: ArrayList<AccessoriesProductModel.Data
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent!!.context)
+        val layoutInflater = LayoutInflater.from(parent.context)
 
         val cellForRow = layoutInflater.inflate(R.layout.infulate_triplist, parent, false)
         return ViewHolder(cellForRow)

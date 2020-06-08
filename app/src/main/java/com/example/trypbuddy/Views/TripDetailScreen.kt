@@ -25,6 +25,7 @@ class TripDetailScreen : BaseActivity(),View.OnClickListener{
     var serviceModel: ServiceModel = ServiceModel()
     var rv_tripbanner:RecyclerView?=null
     var tripId:String?=null
+    var merchantId:String?=null
     var tv_tripname:TextView?=null
     var tv_nearbyplces:TextView?=null
     var tv_tripcity:TextView?=null
@@ -133,6 +134,7 @@ class TripDetailScreen : BaseActivity(),View.OnClickListener{
                 tripwhychooseus = respone.Data!!.get(0).whychooseus.toString()
                 tripnearby = respone.Data!!.get(0).trip_nearby_places.toString()
                 tripnotes = respone.Data!!.get(0).trip_notes.toString()
+                merchantId=respone.Data!!.get(0).createdby
                 val tripPaymentPolicy = Html.fromHtml(respone.Data!!.get(0).trip_payment_policy)
                 val tripCancelationPolicy = Html.fromHtml(respone.Data!!.get(0).trip_cancellation_policy)
                 val tripitinerary = Html.fromHtml(respone.Data!!.get(0).trip_itinerary_details)
@@ -252,6 +254,7 @@ class TripDetailScreen : BaseActivity(),View.OnClickListener{
         if (v==ll_callback){
             val intent=Intent(this,TripCallBackScreen::class.java)
             intent.putExtra("tripId",tripId)
+            intent.putExtra("merchantId",merchantId)
             intent.putExtra("tripname",tripname)
             intent.putExtra("tripdays",tripdays)
             startActivity(intent)

@@ -31,7 +31,7 @@ class BlogListAdapter(val arrData: ArrayList<BlogModel.Data>?, var fragmentConte
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = arrData!![position]
 
-        holder?.tv_blogtitle!!.text = data.blog_name
+        holder.tv_blogtitle!!.text = data.blog_name
         if (! data.blog_image.equals("")) {
             Picasso.with(fragmentContext!!).load("http://sampledocs.org/trypbuddy/uploads/"+data.blog_image)
                 .placeholder(R.drawable.demo)
@@ -45,7 +45,7 @@ class BlogListAdapter(val arrData: ArrayList<BlogModel.Data>?, var fragmentConte
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent!!.context)
+        val layoutInflater = LayoutInflater.from(parent.context)
 
         val cellForRow = layoutInflater.inflate(R.layout.infulate_bloglist, parent, false)
         return ViewHolder(cellForRow)

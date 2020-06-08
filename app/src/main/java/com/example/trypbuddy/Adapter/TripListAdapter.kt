@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.trypbuddy.Model.CategoryModel
 import com.example.trypbuddy.Model.TripListModel
 import com.example.trypbuddy.Presenter.ClickListnerBookMark
+import com.example.trypbuddy.Presenter.ClickListnerWishList
 import com.example.trypbuddy.Presenter.TripClickListner
 import com.example.trypbuddy.R
 import com.squareup.picasso.Picasso
@@ -21,7 +22,7 @@ import java.util.*
 /**
  * Created by Chirag on 22-02-2019.
  */
-class TripListAdapter(val arrData: ArrayList<TripListModel.Data>?, var fragmentContext: Activity?,val tripClickListner: TripClickListner,val clickListnerBookMark: ClickListnerBookMark) : RecyclerView.Adapter<TripListAdapter.ViewHolder>(), Observer {
+class TripListAdapter(val arrData: ArrayList<TripListModel.Data>?, var fragmentContext: Activity?,val tripClickListner: TripClickListner,val clickListnerBookMark: ClickListnerBookMark,val clickListnerWishList: ClickListnerWishList) : RecyclerView.Adapter<TripListAdapter.ViewHolder>(), Observer {
 
     override fun update(o: Observable?, arg: Any?) {
         Log.e("CA", "CA")
@@ -29,9 +30,9 @@ class TripListAdapter(val arrData: ArrayList<TripListModel.Data>?, var fragmentC
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = arrData!![position]
 
-        holder?.tv_tripprice!!.text = "₹ "+data.trip_fare
-        holder?.tv_tripname!!.text = data.trip_name
-        holder?.tv_tripcity!!.text = data.city_name
+        holder.tv_tripprice!!.text = "₹ "+data.trip_fare
+        holder.tv_tripname!!.text = data.trip_name
+        holder.tv_tripcity!!.text = data.city_name
         if (! data.trip_image.equals("")) {
             Picasso.with(fragmentContext!!).load("http://sampledocs.org/trypbuddy/uploads/"+data.trip_image)
                 .placeholder(R.drawable.demo)
@@ -50,10 +51,16 @@ class TripListAdapter(val arrData: ArrayList<TripListModel.Data>?, var fragmentC
             holder.iv_wishlist.isVisible=true
         }
         holder?.iv_wishlist.setOnClickListener(View.OnClickListener {
-           clickListnerBookMark.bookMarkClick(data.id!!,data.merchant_id!!,"1")
+           clickListnerBookMark.bookMarkClick(data.id!!,data.merchant_id!!,"1","Travel")
         })
         holder?.iv_wishlist1.setOnClickListener(View.OnClickListener {
-            clickListnerBookMark.bookMarkClick(data.id!!,data.merchant_id!!,"0")
+            clickListnerBookMark.bookMarkClick(data.id!!,data.merchant_id!!,"0","Travel")
+        })
+        holder?.ic_bookmark.setOnClickListener(View.OnClickListener {
+            clickListnerWishList.wishListClick(data.id!!,data.merchant_id!!,"1","Travel")
+        })
+        holder?.ic_bookmark.setOnClickListener(View.OnClickListener {
+            clickListnerWishList.wishListClick(data.id!!,data.merchant_id!!,"0","Travel")
         })
 
     }

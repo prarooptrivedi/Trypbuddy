@@ -37,6 +37,18 @@ class AccessoriesProductModel:BaseModels() {
         @SerializedName("product_description")
         var product_description: String? = null
 
+        @SerializedName("city")
+        var city: String? = null
+
+        @SerializedName("latitude")
+        var latitude: String? = null
+
+        @SerializedName("longitude")
+        var longitude: String? = null
+
+        @SerializedName("merchantid")
+        var merchantid: String? = null
+
 
     }
 

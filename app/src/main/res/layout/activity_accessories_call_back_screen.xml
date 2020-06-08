@@ -72,7 +72,37 @@
                     android:layout_weight="0.3"
                     android:layout_height="wrap_content" />
             </LinearLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_marginTop="10dip"
+                android:background="@color/colorPrimary"
+                android:layout_height="0.5dip"></View>
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_marginTop="15dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/edit_todate"
+                    android:paddingLeft="10dip"
+                    android:layout_width="0dip"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1.7"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:hint="Choose from date" />
 
+
+                <Button
+                    android:id="@+id/btn_tobutton"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.3"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
             <LinearLayout
                 android:layout_marginTop="10dip"
                 android:layout_width="fill_parent"
@@ -107,6 +137,7 @@
                 android:textColor="#676d77"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/edit_name"
                 android:hint="Name"
                 android:textSize="15dip"
                 android:paddingLeft="10dip"
@@ -129,6 +160,7 @@
                     android:textColor="#676d77"
                     android:layout_height="wrap_content"/>
                 <EditText
+                    android:id="@+id/edit_mobile"
                     android:hint="Mobile"
                     android:paddingLeft="10dip"
                     android:textSize="15dip"
@@ -151,6 +183,7 @@
                     android:textColor="#676d77"
                     android:layout_height="wrap_content"/>
                 <EditText
+                    android:id="@+id/edit_email"
                     android:hint="Email"
                     android:textSize="15dip"
                     android:paddingLeft="10dip"
@@ -173,6 +206,7 @@
                     android:textColor="#676d77"
                     android:layout_height="wrap_content"/>
                 <EditText
+                    android:id="@+id/edit_message"
                     android:gravity="center|left"
                     android:layout_gravity="center|left"
                     android:textSize="15dip"
@@ -193,7 +227,7 @@
 
     </ScrollView>
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_submit"
         android:layout_alignParentBottom="true"
 
         android:text="Submit"

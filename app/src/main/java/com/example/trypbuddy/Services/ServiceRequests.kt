@@ -132,6 +132,11 @@ class ServiceRequests {
                 progressDialog!!.setCancelable(false)
                 response = serviceInterface!!.getwishlistsubmit(jsonValueData)
             }
+            if (serviceName == "bookmark/create.php") {
+                progressDialog!!.show()
+                progressDialog!!.setCancelable(false)
+                response = serviceInterface!!.getBookMarhlistsubmit(jsonValueData)
+            }
             if (serviceName == "blog/listblog.php") {
                 progressDialog!!.show()
                 progressDialog!!.setCancelable(false)
@@ -141,6 +146,11 @@ class ServiceRequests {
                 progressDialog!!.show()
                 progressDialog!!.setCancelable(false)
                 response = serviceInterface!!.getContactus(jsonValueData)
+            }
+            if (serviceName == "tripcallback/create.php") {
+                progressDialog!!.show()
+                progressDialog!!.setCancelable(false)
+                response = serviceInterface!!.sendTripCallBack(jsonValueData)
             }
 
 
