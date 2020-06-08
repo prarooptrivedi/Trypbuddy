@@ -152,6 +152,16 @@ class ServiceRequests {
                 progressDialog!!.setCancelable(false)
                 response = serviceInterface!!.sendTripCallBack(jsonValueData)
             }
+            if (serviceName == "productaccessoriescallback/create.php") {
+                progressDialog!!.show()
+                progressDialog!!.setCancelable(false)
+                response = serviceInterface!!.sendAccessoriesCallBack(jsonValueData)
+            }
+            if (serviceName == "booking/tripbooking.php") {
+                progressDialog!!.show()
+                progressDialog!!.setCancelable(false)
+                response = serviceInterface!!.sendTripBooking(jsonValueData)
+            }
 
 
 

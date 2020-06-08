@@ -557,6 +557,7 @@
             android:background="@color/white"
             android:layout_height="fill_parent"></View>
         <LinearLayout
+            android:id="@+id/ll_book"
             android:layout_width="0dip"
             android:gravity="center"
             android:layout_gravity="center"

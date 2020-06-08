@@ -108,5 +108,13 @@ interface ServiceInterface {
     @POST("tripcallback/create.php")
     fun sendTripCallBack(@Body body: Any?) : Observable<WishListSubmitModel>
 
+    @Headers("Content-Type:application/json")
+    @POST("productaccessoriescallback/create.php")
+    fun sendAccessoriesCallBack(@Body body: Any?) : Observable<WishListSubmitModel>
+
+    @Headers("Content-Type:application/json")
+    @POST("booking/tripbooking.php")
+    fun sendTripBooking(@Body body: Any?) : Observable<WishListSubmitModel>
+
 }
 

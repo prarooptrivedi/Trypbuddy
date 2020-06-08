@@ -18,9 +18,7 @@ import com.example.trypbuddy.Adapter.BannerListAdapter
 import com.example.trypbuddy.Adapter.CategoryListAdapter
 import com.example.trypbuddy.Fragment.BaseFragment
 import com.example.trypbuddy.Model.*
-import com.example.trypbuddy.Presenter.AccessoriesClickListner
-import com.example.trypbuddy.Presenter.CategoryClick
-import com.example.trypbuddy.Presenter.TripClickListner
+import com.example.trypbuddy.Presenter.*
 import com.example.trypbuddy.R
 import com.example.trypbuddy.Views.AccessoriesDetailsActivity
 import com.example.trypbuddy.Views.TripDetailScreen
@@ -30,8 +28,11 @@ import java.util.*
 /**
  * A simple [Fragment] subclass.
  */
-class AccessoriesFragment : BaseFragment(),CategoryClick, AccessoriesClickListner {
+class AccessoriesFragment : BaseFragment(),CategoryClick, AccessoriesClickListner,
+    ClickListnerBookMark, ClickListnerWishList {
 
+    var clickListnerBookMark:ClickListnerBookMark?=null
+    var clickListnerWishList:ClickListnerWishList?=null
     var categoryClick:CategoryClick?=null
     var tripClickListner:AccessoriesClickListner?=null
 
@@ -78,7 +79,15 @@ class AccessoriesFragment : BaseFragment(),CategoryClick, AccessoriesClickListne
                 val respone = arg
                 rv_Accessories!!.visibility = View.VISIBLE
                 rv_Accessories!!.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-                rv_Accessories!!.adapter = AccessoriesListAdapter(respone.data!!,activity,tripClickListner!!)
+                rv_Accessories!!.adapter = AccessoriesListAdapter(respone.data!!,activity,tripClickListner!!,clickListnerBookMark!!,clickListnerWishList!!)
+
+            }
+
+        }
+        if (arg is WishListSubmitModel) {
+            if (arg.status.equals("success")) {
+                val respone = arg
+                Utility.showToast(activity!!, respone.message!!, Toast.LENGTH_SHORT)?.show()
 
             }
 
@@ -113,7 +122,8 @@ class AccessoriesFragment : BaseFragment(),CategoryClick, AccessoriesClickListne
         categoryClick=this as CategoryClick
         tripClickListner=this as AccessoriesClickListner
         initViews(view)
-
+        clickListnerBookMark=this as ClickListnerBookMark
+        clickListnerWishList=this as ClickListnerWishList
         sendBannerRequest()
       
 
@@ -147,12 +157,38 @@ class AccessoriesFragment : BaseFragment(),CategoryClick, AccessoriesClickListne
         }
     }
 
-    override fun TripClick(id: String, isGroup: String,description:String,price:String) {
+    override fun TripClick(id: String, isGroup: String,description:String,price:String,latitude:String,longitude:String,merchantid:String) {
         val  intent= Intent(activity, AccessoriesDetailsActivity::class.java)
-        intent.putExtra("isGroup",isGroup)
+        intent.putExtra("productname",isGroup)
         intent.putExtra("description",description)
         intent.putExtra("price",price)
+        intent.putExtra("latitude",latitude)
+        intent.putExtra("longitude",longitude)
+        intent.putExtra("merchantid",merchantid)
+        intent.putExtra("id",id)
         startActivity(intent)
     }
+    override fun bookMarkClick(tripId: String, merchantId: String, status: String,type:String) {
+        if (Utility.hasInternet(activity!!) == true) {
+            /*val stringHashMap = HashMap<String, String>()
+            stringHashMap.put("token","FBB9F97DE77C7888DE36E5B74CFF9")*/
+            val data = RequestWishlistSubmitModel("FBB9F97DE77C7888DE36E5B74CFF9","1",tripId,merchantId,status,type)
+            serviceModel!!.doPostRequest(data, "wishlist/create.php", activity!!)
+        } else {
+            Utility.showToast(activity!!,"No Internet", Toast.LENGTH_SHORT)?.show()
+        }
 
+
+
+    }
+    override fun wishListClick(tripId: String, merchantId: String, status: String, type: String) {
+        if (Utility.hasInternet(activity!!) == true) {
+            /*val stringHashMap = HashMap<String, String>()
+            stringHashMap.put("token","FBB9F97DE77C7888DE36E5B74CFF9")*/
+            val data = RequestWishlistSubmitModel("FBB9F97DE77C7888DE36E5B74CFF9","1",tripId,merchantId,status,type)
+            serviceModel!!.doPostRequest(data, "bookmark/create.php", activity!!)
+        } else {
+            Utility.showToast(activity!!,"No Internet", Toast.LENGTH_SHORT)?.show()
+        }
+    }
 }

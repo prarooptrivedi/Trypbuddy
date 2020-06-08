@@ -11,3 +11,9 @@ data class RequestContactusModel(var token : String,var emailid:String,var mobil
 data class RequestTripCallBackModel(var token : String,var userid:String,var tripid:String,var merchantid:String,var name:String,
                                     var  todate:String,var fromdate:String,var pincode:String,
                                     var emailid:String,var num_of_adult:String,var remarks:String,var mobile:String)
+data class RequestAccessoriesCallBackModel(var token : String,var userid:String,var paid:String,var merchantid:String,var fromdate:String,
+                                    var  todate:String,var name:String,var emailid:String,
+                                    var remarks:String,var mobile:String)
+data class RequestTripBooking(var token : String,var tripid:String,var bookingdate:String,var fromdate:String,var todate:String,
+                                           var  numberofadult:String,var userid:String,var merchantid:String,
+                                           var username:String,var useremail:String,var userphone:String)

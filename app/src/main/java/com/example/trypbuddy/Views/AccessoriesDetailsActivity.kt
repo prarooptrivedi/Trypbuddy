@@ -20,6 +20,13 @@ class AccessoriesDetailsActivity : AppCompatActivity(), View.OnClickListener {
     var tv_description:TextView?=null
     var tv_perday:TextView?=null
 var top_icon:ImageView?=null
+    var latitude:String?=null
+    var longitude:String?=null
+    var merchantid:String?=null
+    var description:String?=null
+    var price:String?=null
+    var name:String?=null
+    var id:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_accessories_details)
@@ -39,9 +46,13 @@ var top_icon:ImageView?=null
     }
 
     private fun getIntentValues() {
-      val  name = intent.extras!!.getString("isGroup", "")
-      val  description = intent.extras!!.getString("description", "")
-      val  price = intent.extras!!.getString("price", "")
+        name = intent.extras!!.getString("productname", "")
+       description = intent.extras!!.getString("description", "")
+        price = intent.extras!!.getString("price", "")
+        latitude = intent.extras!!.getString("latitude")
+        longitude = intent.extras!!.getString("longitude")
+        merchantid = intent.extras!!.getString("merchantid")
+        id = intent.extras!!.getString("id")
         top_title!!.setText(name)
         text_name!!.setText(name)
         tv_perday!!.setText("₹ "+price+" Price Per day")
@@ -54,10 +65,12 @@ var top_icon:ImageView?=null
        }
         if (v==ll_callback){
             val intent= Intent(this,AccessoriesCallBackScreen::class.java)
-            intent.putExtra("tripId","")
-            intent.putExtra("tripname","")
-            intent.putExtra("tripdays","")
+            intent.putExtra("id",id)
+            intent.putExtra("name",name)
+            intent.putExtra("price",price)
+            intent.putExtra("merchantid",merchantid)
             startActivity(intent)
         }
+
     }
 }

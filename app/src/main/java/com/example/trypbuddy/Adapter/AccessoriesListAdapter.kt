@@ -12,6 +12,7 @@ import com.example.trypbuddy.Model.CategoryModel
 import com.example.trypbuddy.Model.TripListModel
 import com.example.trypbuddy.Presenter.AccessoriesClickListner
 import com.example.trypbuddy.Presenter.ClickListnerBookMark
+import com.example.trypbuddy.Presenter.ClickListnerWishList
 import com.example.trypbuddy.Presenter.TripClickListner
 import com.example.trypbuddy.R
 import com.squareup.picasso.Picasso
@@ -23,7 +24,7 @@ import java.util.*
 /**
  * Created by Chirag on 22-02-2019.
  */
-class AccessoriesListAdapter(val arrData: ArrayList<AccessoriesProductModel.Data>?, var fragmentContext: Activity?, val tripClickListner: AccessoriesClickListner) : RecyclerView.Adapter<AccessoriesListAdapter.ViewHolder>(), Observer {
+class AccessoriesListAdapter(val arrData: ArrayList<AccessoriesProductModel.Data>?, var fragmentContext: Activity?, val tripClickListner: AccessoriesClickListner,val clickListnerBookMark: ClickListnerBookMark,val clickListnerWishList: ClickListnerWishList) : RecyclerView.Adapter<AccessoriesListAdapter.ViewHolder>(), Observer {
 
     override fun update(o: Observable?, arg: Any?) {
         Log.e("CA", "CA")
@@ -31,35 +32,38 @@ class AccessoriesListAdapter(val arrData: ArrayList<AccessoriesProductModel.Data
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = arrData!![position]
 
-        holder.tv_tripprice!!.text = "₹ "+data.price_perday+" "+"Per Day"
+        holder.tv_tripprice!!.text = "₹ " + data.price_perday + " " + "Per Day"
         holder.tv_tripname!!.text = data.product_name
-        holder.tv_tripcity.isVisible=false
-        holder.ic_bookmark.isVisible=true
+        holder.tv_tripcity.isVisible = false
+        holder.ic_bookmark.isVisible = true
         //holder?.tv_tripcity!!.text = data.city_name
-        if (! data.product_image1.equals("")) {
-            Picasso.with(fragmentContext!!).load("http://sampledocs.org/trypbuddy/uploads/"+data.product_image1)
+        if (!data.product_image1.equals("")) {
+            Picasso.with(fragmentContext!!)
+                .load("http://sampledocs.org/trypbuddy/uploads/" + data.product_image1)
                 .placeholder(R.drawable.demo)
                 .error(R.drawable.demo)
                 .into(holder.iv_tripimage)
         }
         holder.ll_click.setOnClickListener(View.OnClickListener {
-            tripClickListner.TripClick(data.id!!,data.product_name!!,data.product_description!!,data.price_perday!!)
+            tripClickListner.TripClick(
+                data.id!!,
+                data.product_name!!,
+                data.product_description!!,
+                data.price_perday!!,data.latitude!!,data.longitude!!,data.merchantid!!
+            )
         })
-      /*  if (data.wishlist.equals("1")){
-            holder.iv_wishlist1.isVisible=true
-            holder.iv_wishlist.isVisible=false
-        }
-        else{
-            holder.iv_wishlist1.isVisible=false
-            holder.iv_wishlist.isVisible=true
-        }*/
-        /*holder?.iv_wishlist.setOnClickListener(View.OnClickListener {
-           clickListnerBookMark.bookMarkClick(data.id!!,data.merchant_id!!,"1")
+        holder?.iv_wishlist.setOnClickListener(View.OnClickListener {
+            clickListnerBookMark.bookMarkClick(data.id!!, data.merchantid!!, "1", "Accessories")
         })
-        holder?.iv_wishlist1.setOnClickListener(View.OnClickListener {
-            clickListnerBookMark.bookMarkClick(data.id!!,data.merchant_id!!,"0")
+       /* holder?.iv_wishlist1.setOnClickListener(View.OnClickListener {
+            clickListnerBookMark.bookMarkClick(data.id!!, data.merchantid!!, "0", "Accessories")
         })*/
-
+        holder?.ic_bookmark.setOnClickListener(View.OnClickListener {
+            clickListnerWishList.wishListClick(data.id!!, data.merchantid!!, "1", "Accessories")
+        })
+     /*   holder?.ic_bookmark.setOnClickListener(View.OnClickListener {
+            clickListnerWishList.wishListClick(data.id!!, data.merchantid!!, "0", "Accessories")
+        })*/
     }
 
 

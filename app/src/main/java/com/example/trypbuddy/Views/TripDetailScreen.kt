@@ -53,6 +53,7 @@ class TripDetailScreen : BaseActivity(),View.OnClickListener{
     var tv_CancelationPolicy:TextView?=null
     var tv_whychooseus:TextView?=null
     var ll_callback:LinearLayout?=null
+    var ll_book:LinearLayout?=null
 
     var tripcomplementory:String=""
     var tripwhychooseus:String=""
@@ -60,6 +61,8 @@ class TripDetailScreen : BaseActivity(),View.OnClickListener{
     var tripnotes:String=""
     var tripname:String=""
     var tripdays:String=""
+    var tripcity:String=""
+    var tripprice:String=""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -93,6 +96,7 @@ class TripDetailScreen : BaseActivity(),View.OnClickListener{
         card_CancelationPolicy=findViewById(R.id.card_CancelationPolicy)
         card_PaymentPolicy=findViewById(R.id.card_PaymentPolicy)
         card_notes=findViewById(R.id.card_notes)
+        ll_book=findViewById(R.id.ll_book)
         card_complimentary!!.setOnClickListener(this)
         card_whychooseus!!.setOnClickListener(this)
         card_nearbyplces!!.setOnClickListener(this)
@@ -109,6 +113,7 @@ class TripDetailScreen : BaseActivity(),View.OnClickListener{
         tv_nearbyplces=findViewById(R.id.tv_nearbyplces)
         ll_callback=findViewById(R.id.ll_callback)
         ll_callback!!.setOnClickListener(this)
+        ll_book!!.setOnClickListener(this)
     }
 
     override fun getModel(): Observable {
@@ -124,6 +129,8 @@ class TripDetailScreen : BaseActivity(),View.OnClickListener{
                 rv_tripbanner!!.adapter = TripImagesListAdapter(respone.Images!!,this)
                 tripname=respone.Data!!.get(0).trip_name.toString()
                 tripdays=respone.Data!!.get(0).trip_days.toString()
+                tripcity=respone.Data!!.get(0).city_name.toString()
+                tripprice=respone.Data!!.get(0).trip_fare.toString()
                 tv_tripname!!.text=respone.Data!!.get(0).trip_name
                 tv_tripcity!!.text=respone.Data!!.get(0).city_name
                 tv_tripprice!!.text=" ₹ "+respone.Data!!.get(0).trip_fare
@@ -257,6 +264,16 @@ class TripDetailScreen : BaseActivity(),View.OnClickListener{
             intent.putExtra("merchantId",merchantId)
             intent.putExtra("tripname",tripname)
             intent.putExtra("tripdays",tripdays)
+            startActivity(intent)
+        }
+        if (v==ll_book){
+            val intent=Intent(this,TripBookingScreen::class.java)
+            intent.putExtra("tripId",tripId)
+            intent.putExtra("merchantId",merchantId)
+            intent.putExtra("tripname",tripname)
+            intent.putExtra("tripdays",tripdays)
+            intent.putExtra("tripcity",tripcity)
+            intent.putExtra("tripprice",tripprice)
             startActivity(intent)
         }
         if (v==top_icon){
