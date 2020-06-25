@@ -2,6 +2,7 @@ package com.example.trypbuddy.Model
 
 data class RequestModelHome(var token : String)
 data class RequestTripModel(var token : String,var category_id:String,var uid:String)
+data class RequestTopCityModel(var token : String)
 data class RequestAccessoriesModel(var token : String,var category_id:String)
 data class RequestTripDetailsModel(var token : String,var id:String)
 data class RequestTripCityModel(var token : String,var city_id:String)
@@ -17,3 +18,7 @@ data class RequestAccessoriesCallBackModel(var token : String,var userid:String,
 data class RequestTripBooking(var token : String,var tripid:String,var bookingdate:String,var fromdate:String,var todate:String,
                                            var  numberofadult:String,var userid:String,var merchantid:String,
                                            var username:String,var useremail:String,var userphone:String)
+
+data class RequestAccessoriesBooking(var token : String,var paid:String,var bookingdate:String,var fromdate:String,var todate:String,
+                                           var  userid:String,var merchantid:String,var username:String,
+                                           var useremail:String,var userphone:String)

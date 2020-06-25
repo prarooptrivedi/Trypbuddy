@@ -32,8 +32,17 @@ interface ServiceInterface {
 
 
     @Headers("Content-Type:application/json")
+    @POST("city/listtopcity.php")
+    fun getTopCity(@Body body: Any?) : Observable<TopCityModel>
+
+
+    @Headers("Content-Type:application/json")
     @POST("trip/listtrip.php")
     fun getTrip(@Body body: Any?) : Observable<TripListModel>
+
+    @Headers("Content-Type:application/json")
+    @POST("trip/listtoptrip.php")
+    fun getTopTrip(@Body body: Any?) : Observable<TopTripListModel>
 
 
     @Headers("Content-Type:application/json")
@@ -115,6 +124,10 @@ interface ServiceInterface {
     @Headers("Content-Type:application/json")
     @POST("booking/tripbooking.php")
     fun sendTripBooking(@Body body: Any?) : Observable<WishListSubmitModel>
+
+    @Headers("Content-Type:application/json")
+    @POST("booking/productaccessoriesbooking.php")
+    fun sendAccessoriesBooking(@Body body: Any?) : Observable<WishListSubmitModel>
 
 }
 

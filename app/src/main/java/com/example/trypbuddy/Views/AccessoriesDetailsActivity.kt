@@ -15,11 +15,12 @@ class AccessoriesDetailsActivity : AppCompatActivity(), View.OnClickListener {
 
 
     var ll_callback:LinearLayout?=null
+    var ll_accessoriesBooking:LinearLayout?=null
     var top_title:TextView?=null
     var text_name:TextView?=null
     var tv_description:TextView?=null
     var tv_perday:TextView?=null
-var top_icon:ImageView?=null
+    var top_icon:ImageView?=null
     var latitude:String?=null
     var longitude:String?=null
     var merchantid:String?=null
@@ -41,13 +42,15 @@ var top_icon:ImageView?=null
         tv_description=findViewById(R.id.tv_description)
         tv_perday=findViewById(R.id.tv_perday)
         top_icon=findViewById(R.id.top_icon)
+        ll_accessoriesBooking=findViewById(R.id.ll_accessoriesBooking)
         top_icon!!.setOnClickListener(this)
         ll_callback!!.setOnClickListener(this)
+        ll_accessoriesBooking!!.setOnClickListener(this)
     }
 
     private fun getIntentValues() {
         name = intent.extras!!.getString("productname", "")
-       description = intent.extras!!.getString("description", "")
+        description = intent.extras!!.getString("description", "")
         price = intent.extras!!.getString("price", "")
         latitude = intent.extras!!.getString("latitude")
         longitude = intent.extras!!.getString("longitude")
@@ -60,11 +63,19 @@ var top_icon:ImageView?=null
         tv_description!!.setText(descriptions)
     }
     override fun onClick(v: View?) {
-       if (v==top_icon){
-           finish()
-       }
+        if (v==top_icon){
+            finish()
+        }
         if (v==ll_callback){
             val intent= Intent(this,AccessoriesCallBackScreen::class.java)
+            intent.putExtra("id",id)
+            intent.putExtra("name",name)
+            intent.putExtra("price",price)
+            intent.putExtra("merchantid",merchantid)
+            startActivity(intent)
+        }
+        if (v==ll_accessoriesBooking){
+            val intent= Intent(this,AccessoriesBookingScreen::class.java)
             intent.putExtra("id",id)
             intent.putExtra("name",name)
             intent.putExtra("price",price)

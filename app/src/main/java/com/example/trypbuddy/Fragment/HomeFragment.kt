@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.biz_intelligence.Utils.Utility
 import com.example.meetingschedule.Utils.MainApp
 import com.example.meetingschedule.Webservice.ServiceModel
-import com.example.trypbuddy.Adapter.BannerListAdapter
-import com.example.trypbuddy.Adapter.CategoryListAdapter
-import com.example.trypbuddy.Adapter.TripListAdapter
+import com.example.trypbuddy.Adapter.*
 import com.example.trypbuddy.Fragment.BaseFragment
 import com.example.trypbuddy.Model.*
 import com.example.trypbuddy.Presenter.CategoryClick
@@ -41,6 +39,8 @@ class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickL
     var rv_category:RecyclerView?=null
     var rv_banner:RecyclerView?=null
     var rv_trips:RecyclerView?=null
+    var rv_city:RecyclerView?=null
+    var rv_topTrip:RecyclerView?=null
 
     var serviceModel: ServiceModel? = ServiceModel()
     override val model: Observable?
@@ -70,6 +70,8 @@ class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickL
         rv_category=view.findViewById(R.id.rv_category)
         rv_trips=view.findViewById(R.id.rv_trips)
         rv_banner=view.findViewById(R.id.rv_banner)
+        rv_city=view.findViewById(R.id.rv_city)
+        rv_topTrip=view.findViewById(R.id.rv_topTrip)
     }
 
     override fun update(o: Observable?, arg: Any?) {
@@ -95,10 +97,39 @@ class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickL
                 rv_category!!.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
                 rv_category!!.adapter = CategoryListAdapter(respone.data!!,activity,categoryClick!!)
 
+                //getTrip()
+                    getTopCity()
+            }
+
+        }
+        if (arg is TopCityModel) {
+            if (arg.status.equals("success")) {
+                val respone = arg
+                rv_city!!.visibility = View.VISIBLE
+                rv_city!!.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+                rv_city!!.adapter = TopCityListAdapter(respone.data!!,activity,categoryClick!!)
+                getTopTrip()
+
+            }
+            else{
+                rv_city!!.visibility = View.GONE
+            }
+        }
+        else{
+            rv_trips!!.visibility = View.GONE
+        }
+        if (arg is TopTripListModel) {
+            if (arg.status.equals("success")) {
+                val respone = arg
+                rv_topTrip!!.visibility = View.VISIBLE
+                rv_topTrip!!.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+                rv_topTrip!!.adapter = TopTripListAdapter(respone.data!!,activity,tripClickListner!!,clickListnerBookMark!!,clickListnerWishList!!)
                 getTrip()
 
             }
-
+            else{
+                rv_trips!!.visibility = View.GONE
+            }
         }
         if (arg is TripListModel) {
             if (arg.status.equals("success")) {
@@ -140,7 +171,26 @@ class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickL
             Utility.showToast(activity!!,"No Internet", Toast.LENGTH_SHORT)?.show()
         }
     }
-
+    private fun getTopCity() {
+        if (Utility.hasInternet(activity!!) == true) {
+            /*val stringHashMap = HashMap<String, String>()
+            stringHashMap.put("token","FBB9F97DE77C7888DE36E5B74CFF9")*/
+            val data = RequestTopCityModel("FBB9F97DE77C7888DE36E5B74CFF9")
+            serviceModel!!.doPostRequest(data, "city/listtopcity.php", activity!!)
+        } else {
+            Utility.showToast(activity!!,"No Internet", Toast.LENGTH_SHORT)?.show()
+        }
+    }
+    private fun getTopTrip() {
+        if (Utility.hasInternet(activity!!) == true) {
+            /*val stringHashMap = HashMap<String, String>()
+            stringHashMap.put("token","FBB9F97DE77C7888DE36E5B74CFF9")*/
+            val data = RequestTopCityModel("FBB9F97DE77C7888DE36E5B74CFF9")
+            serviceModel!!.doPostRequest(data, "trip/listtoptrip.php", activity!!)
+        } else {
+            Utility.showToast(activity!!,"No Internet", Toast.LENGTH_SHORT)?.show()
+        }
+    }
 
     private fun sendRequest() {
         if (Utility.hasInternet(activity!!) == true) {
@@ -156,15 +206,11 @@ class HomeFragment :BaseFragment(),View.OnClickListener,TripClickListner, ClickL
     }
     private fun sendBannerRequest() {
         if (Utility.hasInternet(activity!!) == true) {
-            /*val stringHashMap = HashMap<String, String>()
-            stringHashMap.put("token","FBB9F97DE77C7888DE36E5B74CFF9")*/
             val data = RequestModelHome("FBB9F97DE77C7888DE36E5B74CFF9")
             serviceModel!!.doPostRequest(data, "banner/listbanner.php", activity!!)
         } else {
             Utility.showToast(activity!!,"No Internet", Toast.LENGTH_SHORT)?.show()
         }
-
-
     }
     override fun onClick(v: View?) {
         if (v != null) {

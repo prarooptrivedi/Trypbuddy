@@ -64,6 +64,11 @@ class ServiceRequests {
                 progressDialog!!.setCancelable(false)
                 response = serviceInterface!!.getCategory(jsonValueData)
             }
+            if (serviceName == "city/listtopcity.php") {
+                progressDialog!!.show()
+                progressDialog!!.setCancelable(false)
+                response = serviceInterface!!.getTopCity(jsonValueData)
+            }
             if (serviceName == "aboutus/listaboutus.php") {
                 progressDialog!!.show()
                 progressDialog!!.setCancelable(false)
@@ -90,6 +95,11 @@ class ServiceRequests {
                 progressDialog!!.show()
                 progressDialog!!.setCancelable(false)
                 response = serviceInterface!!.getTrip(jsonValueData)
+            }
+            if (serviceName == "trip/listtoptrip.php") {
+                progressDialog!!.show()
+                progressDialog!!.setCancelable(false)
+                response = serviceInterface!!.getTopTrip(jsonValueData)
             }
             if (serviceName == "city/listcitytrips.php") {
                 progressDialog!!.show()
@@ -161,6 +171,11 @@ class ServiceRequests {
                 progressDialog!!.show()
                 progressDialog!!.setCancelable(false)
                 response = serviceInterface!!.sendTripBooking(jsonValueData)
+            }
+            if (serviceName == "booking/productaccessoriesbooking.php") {
+                progressDialog!!.show()
+                progressDialog!!.setCancelable(false)
+                response = serviceInterface!!.sendAccessoriesBooking(jsonValueData)
             }
 
 
